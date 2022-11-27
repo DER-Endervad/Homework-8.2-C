@@ -41,7 +41,7 @@ public:
 	}
 
 	void get_quadrangle() {
-		std::cout << name << ": " << std::endl;
+		Figure::get_sides_count();
 		std::cout << "Стороны: a=" << length_a << " b=" << length_b << " c=" << length_c << " d=" << length_d << std::endl;
 		std::cout << "Углы: A=" << angel_a << " B=" << angel_b << " C=" << angel_c << " D=" << angel_d << std::endl;
 	}

@@ -13,7 +13,7 @@ public:
 	}
 
 	void get_sides_count() {
-		std::cout << name << ": " << sides_count << std::endl;
+		std::cout << name << ": " << std::endl;
 	};
 };
 

@@ -18,29 +18,29 @@ int main()
     SetConsoleOutputCP(1251);
 
     Triangle* t = new Triangle(10, 20, 30, 50, 60, 70); 
-    t->get_triangle(); std::cout << std::endl;
+    t->get_triangle(); std::cout << std::endl; delete t;
 
     Triangle* rt = new Right_triangle(10, 20, 30, 40, 50); // В задание указаны не правильные углы A=50 B=60 C=90 их сумма 200 она не равна 180.
-    rt->get_triangle(); std::cout << std::endl;
+    rt->get_triangle(); std::cout << std::endl; delete rt;
 
     Triangle* it = new Isosceles_triangle(10, 20, 50, 80); // Тут тоже сумма углов не равна 180. (A=50 B=60 C=50 = 160)
-    it->get_triangle(); std::cout << std::endl;
+    it->get_triangle(); std::cout << std::endl; delete it;
 
     Triangle* et = new Equilateral_triangle(30);
-    et->get_triangle(); std::cout << std::endl;
+    et->get_triangle(); std::cout << std::endl; delete et;
 
     Quadrangle* q = new Quadrangle(10, 20, 30, 40, 50, 60, 70, 80); 
-    q->get_quadrangle(); std::cout << std::endl;
+    q->get_quadrangle(); std::cout << std::endl; delete q;
 
     Quadrangle* r = new Rectangle_Q(10, 20);
-    r->get_quadrangle(); std::cout << std::endl;
+    r->get_quadrangle(); std::cout << std::endl; delete r;
 
     Quadrangle* s = new Square(20);
-    s->get_quadrangle(); std::cout << std::endl;
+    s->get_quadrangle(); std::cout << std::endl; delete s;
 
     Quadrangle* p = new Parallelogram(20, 30, 30, 40);
-    p->get_quadrangle(); std::cout << std::endl;
+    p->get_quadrangle(); std::cout << std::endl; delete p;
 
     Quadrangle* rh = new Rhombus(30, 30, 40);
-    rh->get_quadrangle(); std::cout << std::endl;
+    rh->get_quadrangle(); std::cout << std::endl; delete rh;
 }
