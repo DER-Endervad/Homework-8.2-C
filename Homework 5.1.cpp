@@ -10,6 +10,9 @@
 #include "Parallelogram.h"
 #include "Rhombus.h"
 #include <Windows.h>
+#include <fstream>
+
+void print_info(Figure* figure);
 
 int main()
 {
@@ -17,30 +20,38 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    Triangle* t = new Triangle(10, 20, 30, 50, 60, 70); 
-    t->get_triangle(); std::cout << std::endl; delete t;
+    Figure figure;
+
+    Triangle* t = new Triangle(10, 20, 30, 50, 60, 70);
+    print_info(t); std::cout << std::endl; delete t;
 
     Triangle* rt = new Right_triangle(10, 20, 30, 40, 50); // В задание указаны не правильные углы A=50 B=60 C=90 их сумма 200 она не равна 180.
-    rt->get_triangle(); std::cout << std::endl; delete rt;
+    print_info(rt); std::cout << std::endl; delete rt;
 
     Triangle* it = new Isosceles_triangle(10, 20, 50, 80); // Тут тоже сумма углов не равна 180. (A=50 B=60 C=50 = 160)
-    it->get_triangle(); std::cout << std::endl; delete it;
+    print_info(it); std::cout << std::endl; delete it;
 
     Triangle* et = new Equilateral_triangle(30);
-    et->get_triangle(); std::cout << std::endl; delete et;
+    print_info(et); std::cout << std::endl; delete et;
 
     Quadrangle* q = new Quadrangle(10, 20, 30, 40, 50, 60, 70, 80); 
-    q->get_quadrangle(); std::cout << std::endl; delete q;
+    print_info(q); std::cout << std::endl; delete q;
 
     Quadrangle* r = new Rectangle_Q(10, 20);
-    r->get_quadrangle(); std::cout << std::endl; delete r;
+    print_info(r); std::cout << std::endl; delete r;
 
     Quadrangle* s = new Square(20);
-    s->get_quadrangle(); std::cout << std::endl; delete s;
+    print_info(s); std::cout << std::endl; delete s;
 
     Quadrangle* p = new Parallelogram(20, 30, 30, 40);
-    p->get_quadrangle(); std::cout << std::endl; delete p;
+    print_info(p); std::cout << std::endl; delete p;
 
     Quadrangle* rh = new Rhombus(30, 30, 40);
-    rh->get_quadrangle(); std::cout << std::endl; delete rh;
+    print_info(rh); std::cout << std::endl; delete rh;
+}
+
+void print_info(Figure* figure)
+{
+    figure->get_sides_count();
+    //std::cout << figure->get_sides_count() << std::endl; тут ошибка c++ отсутствует оператор, соответствующий этим операндам типы операндов: std::ostream << void
 }

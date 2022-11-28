@@ -45,7 +45,7 @@ public:
 		}
 	}
 
-	void get_triangle() {
+	void get_sides_count() override {
 		Figure::get_sides_count();
 		std::cout << "Стороны: a=" << length_a << " b=" << length_b << " c=" << length_c << std::endl;
 		std::cout << "Углы: A=" << angel_a << " B=" << angel_b << " C=" << angel_c << std::endl;

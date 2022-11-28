@@ -12,7 +12,7 @@ public:
 		name = "Фигура";
 	}
 
-	void get_sides_count() {
+	virtual void get_sides_count() {
 		std::cout << name << ": " << std::endl;
 	};
 };
