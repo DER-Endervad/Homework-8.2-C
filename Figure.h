@@ -7,13 +7,8 @@ protected:
 	std::string name;
 	
 public:
-	Figure() {
-		sides_count = 0;
-		name = "Фигура";
-	}
+	Figure();
 
-	virtual void get_sides_count() {
-		std::cout << name << ": " << std::endl;
-	};
+	virtual void get_sides_count();
 };
 
