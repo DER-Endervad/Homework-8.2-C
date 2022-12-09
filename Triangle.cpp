@@ -1,8 +1,7 @@
 #include "Triangle.h"
 
 Triangle::Triangle(int l_a, int l_b, int l_c, int a_a, int a_b, int a_c) {
-	if ((a_a + a_b + a_c) == 180) {
-		sides_count = 3;
+	try {
 		name = "Треугольник";
 		length_a = l_a;
 		length_b = l_b;
@@ -10,15 +9,28 @@ Triangle::Triangle(int l_a, int l_b, int l_c, int a_a, int a_b, int a_c) {
 		angel_a = a_a;
 		angel_b = a_b;
 		angel_c = a_c;
+		Triangle::get_sides_count();
+		if ((a_a + a_b + a_c) != 180) {
+			throw 1;
+		}
+		else {
+			if (l_a == 0 || l_b == 0 || l_c == 0) {
+				throw 2;
+			}
+			else {
+				std::cout << " был создан." << std::endl;
+				sides_count = 3;
+			}
+		}
 	}
-	else {
-		std::cout << "Сумма углов в треугольнике не равна 180." << std::endl;
+	catch (int err) {
+		My_exception my_exception;
+		my_exception.exception(err);
 	}
 }
 
 Triangle::Triangle(int l_a, int l_b, int l_c, int a_a, int a_b, int a_c, std::string name) {
-	if ((a_a + a_b + a_c) == 180) {
-		sides_count = 3;
+	try {
 		this->name = name;
 		length_a = l_a;
 		length_b = l_b;
@@ -26,14 +38,25 @@ Triangle::Triangle(int l_a, int l_b, int l_c, int a_a, int a_b, int a_c, std::st
 		angel_a = a_a;
 		angel_b = a_b;
 		angel_c = a_c;
+		Triangle::get_sides_count();
+		if ((a_a + a_b + a_c) != 180) {
+			throw 1;
+		}
+		else {
+			if (l_a == 0 || l_b == 0 || l_c == 0) {
+				throw 2;
+			}
+			else {
+				sides_count = 3;
+			}
+		}
 	}
-	else {
-		std::cout << "Сумма углов в треугольнике не равна 180." << std::endl;
+	catch (int err) {
+		My_exception my_exception;
+		my_exception.exception(err);
 	}
 }
 
 void Triangle::get_sides_count() {
-	Figure::get_sides_count();
-	std::cout << "Стороны: a=" << length_a << " b=" << length_b << " c=" << length_c << std::endl;
-	std::cout << "Углы: A=" << angel_a << " B=" << angel_b << " C=" << angel_c << std::endl;
+	std::cout << name << " (стороны " << length_a << ", " << length_b << ", " << length_c << "; " << "углы " << angel_a << ", " << angel_b << ", " << angel_c << ")";
 }
