@@ -12,8 +12,6 @@
 #include <Windows.h>
 #include <fstream>
 
-//void print_info(Figure* figure);
-
 int main()
 {
     setlocale(LC_ALL, "Russian");
@@ -65,13 +63,4 @@ int main()
     Figure* rh1 = new Rhombus(10, 10, 10, 20, 100, 80, 100, 80);
     Figure* rh2 = new Rhombus(10, 10, 10, 10, 100, 100, 100, 60);
     delete rh; delete rh1; delete rh2; std::cout << std::endl;
-
-    //Quadrangle* rh = new Rhombus(30, 30, 40);
-    //print_info(rh); std::cout << std::endl; delete rh;
 }
-
-//void print_info(Figure* figure)
-//{
-//    figure->get_sides_count();
-//    //std::cout << figure->get_sides_count() << std::endl; тут ошибка c++ отсутствует оператор, соответствующий этим операндам типы операндов: std::ostream << void
-//}
