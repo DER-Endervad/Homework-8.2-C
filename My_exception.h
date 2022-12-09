@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <stdexcept>
-class My_exception
+class My_exception : /* public std::domain_error не работает наследование */
 {
 public:
 	My_exception();
