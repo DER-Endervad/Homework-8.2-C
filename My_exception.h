@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
 #include <stdexcept>
-class My_exception // : public std::domain_error не работает наследование
+class My_exception : public std::domain_error 
 {
 public:
-	My_exception();
-	void exception(int error);
+	My_exception(domain_error d);
+	/*void exception(int n);*/
 };
 

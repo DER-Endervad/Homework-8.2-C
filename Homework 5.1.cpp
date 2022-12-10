@@ -41,7 +41,7 @@ int main()
 
     Figure* q = new Quadrangle(10, 20, 30, 40, 80, 80, 100, 100);
     Figure* q1 = new Quadrangle(10, 20, 30, 40, 50, 60, 70, 80);
-    Figure* q2 = new Quadrangle(10, 20, 30, 0, 50, 60, 70, 80);
+    Figure* q2 = new Quadrangle(10, 20, 30, 0, 80, 80, 100, 100);
     delete q; delete q1; delete q2; std::cout << std::endl;
 
     Figure* r = new Rectangle_Q(10, 20, 10, 20, 90, 90, 90, 90);

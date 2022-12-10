@@ -11,11 +11,11 @@ Triangle::Triangle(int l_a, int l_b, int l_c, int a_a, int a_b, int a_c) {
 		angel_c = a_c;
 		Triangle::get_sides_count();
 		if ((a_a + a_b + a_c) != 180) {
-			throw 1;
+			throw std::domain_error(" не был создан. Причина: сумма углов не равна 180");
 		}
 		else {
 			if (l_a == 0 || l_b == 0 || l_c == 0) {
-				throw 2;
+				throw std::domain_error(" не был создан. Причина: количество сторон меньше 3");
 			}
 			else {
 				std::cout << " был создан." << std::endl;
@@ -23,9 +23,9 @@ Triangle::Triangle(int l_a, int l_b, int l_c, int a_a, int a_b, int a_c) {
 			}
 		}
 	}
-	catch (int err) {
-		My_exception my_exception;
-		my_exception.exception(err);
+	catch (std::domain_error d) {
+		My_exception my_exception(d);
+		/*my_exception.exception(err);*/
 	}
 }
 
@@ -40,20 +40,20 @@ Triangle::Triangle(int l_a, int l_b, int l_c, int a_a, int a_b, int a_c, std::st
 		angel_c = a_c;
 		Triangle::get_sides_count();
 		if ((a_a + a_b + a_c) != 180) {
-			throw 1;
+			throw std::domain_error(" не был создан. Причина: сумма углов не равна 180");
 		}
 		else {
 			if (l_a == 0 || l_b == 0 || l_c == 0) {
-				throw 2;
+				throw std::domain_error(" не был создан. Причина: количество сторон меньше 3");
 			}
 			else {
 				sides_count = 3;
 			}
 		}
 	}
-	catch (int err) {
-		My_exception my_exception;
-		my_exception.exception(err);
+	catch (std::domain_error d) {
+		My_exception my_exception(d);
+		/*my_exception.exception(err);*/
 	}
 }
 

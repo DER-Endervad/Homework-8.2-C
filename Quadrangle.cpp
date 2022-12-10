@@ -13,11 +13,11 @@ Quadrangle::Quadrangle(int l_a, int l_b, int l_c, int l_d, int a_a, int a_b, int
 		angel_d = a_d;
 		Quadrangle::get_sides_count();
 		if ((a_a + a_b + a_c + a_d) != 360) {
-			throw 8;
+			throw std::domain_error(" не был создан. Причина: сумма углов не равна 360");
 		}
 		else {
 			if (l_a == 0 || l_b == 0 || l_c == 0 || l_d == 0) {
-				throw 9;
+				throw std::domain_error(" не был создан. Причина: количество сторон меньше 4");
 			}
 			else {
 				std::cout << " был создан." << std::endl;
@@ -25,9 +25,9 @@ Quadrangle::Quadrangle(int l_a, int l_b, int l_c, int l_d, int a_a, int a_b, int
 			}
 		}
 	}
-	catch (int err) {
-		My_exception my_exception;
-		my_exception.exception(err);
+	catch (std::domain_error d) {
+		My_exception my_exception(d);
+		/*my_exception.exception(err);*/
 	}
 }
 
@@ -44,20 +44,20 @@ Quadrangle::Quadrangle(int l_a, int l_b, int l_c, int l_d, int a_a, int a_b, int
 		angel_d = a_d;
 		Quadrangle::get_sides_count();
 		if ((a_a + a_b + a_c + a_d) != 360) {
-			throw 8;
+			throw std::domain_error(" не был создан. Причина: сумма углов не равна 360");
 		}
 		else {
 			if (l_a == 0 || l_b == 0 || l_c == 0 || l_d == 0) {
-				throw 9;
+				throw std::domain_error(" не был создан. Причина: количество сторон меньше 4");
 			}
 			else {
 				sides_count = 4;
 			}
 		}
 	}
-	catch (int err) {
-		My_exception my_exception;
-		my_exception.exception(err);
+	catch (std::domain_error d) {
+		My_exception my_exception(d);
+		/*my_exception.exception(err);*/
 	}
 }
 
